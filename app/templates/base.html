@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- crea un bloque para heredar en esa posicion -->
+    {% block style %}{% endblock %}
+    <!-- crea un bloque para heredar e esa posicion -->
+    <title>TodoList - {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <!-- crea u bloque para heredar en esa posicion-->
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

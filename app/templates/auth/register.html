@@ -1,0 +1,30 @@
+<!-- hereda de un base html-->
+{% extends 'base.html' %}
+
+<!-- indica que tendra dentro del bloque-->
+{% block style %}<link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">{% endblock %}
+
+
+{%block title %}Registrarse{% endblock %}
+
+{% block content %}
+
+    <nav class="nav">
+        <ul class="nav_ul">
+            <li class="nav_login">TodoList</li>
+            <!-- el url_for redirecciona el index-->
+            <li class="nav_login"><a href="{{url_for('index')}}" class="nav_login-salir">Salir</a></li>
+        </ul>
+    </nav>
+
+    <form action="" method="post">
+        <label for="username">Usuario:</label>
+        <input type="text" name="username" id="username" class="form_input" required>
+        <br>
+        <label for="password">Contrasena:</label>
+        <input type="password" name="password" id="password" class="form_input" required>
+        <br>
+        <button type="submit" value="registrarse" class="enviar">Registrarse</button>
+    </form>
+
+{% endblock %}

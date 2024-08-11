@@ -1,0 +1,61 @@
+<!-- hereda de un archivo base -->
+{% extends 'base.html' %}
+
+{% block style %}<link rel="stylesheet" href="{{url_for('static',filename='css/tareas.css')}}">{% endblock %}
+
+<!-- indica que ira dentro del bloque-->
+{% block title %}Lista de tareas{% endblock %}
+
+{% block content %}
+<!-- empieza una verificacion si esta el usuario con g-->
+{% if g.user %}
+<nav class="nav">
+    <ul class="nav_ul">
+        <!-- muestra el nombre del usuario-->
+        <li class="nav_ul-li"><span>{{g.user.username}}</span></li>
+        <!-- el url_for redirecciona a otras paginas con bp-->
+        <li class="nav_ul-li"><a href="{{url_for('auth.logout')}}" class="nav_ul-li nav_usuario">Cerrar sesion</a></li>
+        <li class="nav_ul-li"><a href="{{url_for('todo.create')}}" class="nav_ul-li nav_usuario">Nuevo</a></li>
+    </ul>
+</nav>
+<section class="section">
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th class="campos">Tareas</th>
+                <th class="campos">Estado</th>
+                <th class="campos">Editar</th>
+                <th class="campos">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!-- inicia un for con el arreglo todos y aplica un filtro para que el arreglo este alreves -->
+        {% for todo in todos | reverse %}
+        <!-- hace una verificacion que la tarea este echa por el usuario activo-->
+        {% if g.user.id == todo.created_by %}
+            <tr>
+                <td class="tareas">
+                    <h5 class="titulo">{{todo.title}}</h5>
+                    <p>{{todo.desc}}</p>
+                </td>
+                <td class="tareas">
+                    {% if todo.state == false %}
+                    <span class="tarea-incompleta">Incompleto</span>
+                    {% else %}
+                    <span class="tarea-completa">Completado</span>
+                    {% endif %}
+                </td class="tareas">
+                <td class="tareas"><a href="{{url_for('todo.update', id = todo.id)}}" class="editar" >Editar</a></td>
+                <td class="tareas"><a href="{{url_for('todo.delete', id = todo.id)}}" class="eliminar" >Eliminar</a></td>
+            </tr>
+        <!-- termina la verificacion-->
+        {% endif %}
+        <!-- termiona el for -->
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+<!-- termina la verificaion -->
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    background-color: #009dff;
+    position: relative;
+    padding: 10px 0;
+}
+
+.nav_ul-li{
+    text-decoration: none;
+    display: inline;
+    color: #edfcff;
+    font-size: 30px;
+}
+
+.nav_ul-li:active{
+    color: #edfcff;
+}
+
+.nav_usuario{
+    padding: 10px 10px;
+    display: inline;
+    float: right;
+    transform: translate(-5%,-20%);
+    -webkit-transform: translate(-5%,-20%);
+    -moz-transform: translate(-5%,-20%);
+    -ms-transform: translate(-5%,-20%);
+    -o-transform: translate(-5%,-20%);
+}
+
+.nav_usuario:hover{
+    color: #85f4ff;
+}
+
+.section{
+    margin-top: 20px;
+}
+
+.tabla{
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.campos{
+    border: 1px solid grey;
+    border-bottom: none;
+    padding: 15px 0;
+    border-right: none;
+}
+
+.tareas{
+    border: 1px solid grey;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+}
+
+.titulo{
+    font-size: 25px;
+}
+
+.tarea-incompleta{
+    color: red;
+}
+
+.tarea-completa{
+    color: green;
+}
+
+.editar{
+    text-decoration: none;
+    background-color: #2fafff;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.eliminar{
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    padding: 5px 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}

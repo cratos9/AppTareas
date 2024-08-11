@@ -1,0 +1,22 @@
+<!-- hereda de un html base-->
+{% extends 'base.html' %}
+
+{% block style %}<link rel="stylesheet" href="{{url_for('static',filename='css/guardar.css')}}">{% endblock %}
+<!-- que tendra dentro el bloque con el mismo nombre-->
+{% block title %}Ingresar tarea{% endblock %}
+
+{% block content %}
+    <section>
+        <h3>Ingresar tarea</h3>
+        <form action="" method="post">
+            <label for="title">Titulo</label>
+            <input type="text" id="title" name="title" required>
+            <label for="desc">Descripcion</label>
+            <textarea name="desc" id="desc" rows="3"></textarea>
+            <br>
+            <!-- redirecciona a una pagina con bp-->
+            <input type="submit" value="Guardar" class="guardar">
+            <a href="{{url_for('todo.index')}}">Cancelar</a>
+        </form>
+    </section>
+{% endblock %}

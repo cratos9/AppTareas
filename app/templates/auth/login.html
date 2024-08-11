@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block style %}<link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">{% endblock %}
+
+
+{%block title %}Iniciar Sesion{% endblock %}
+
+{% block content %}
+    <nav class="nav">
+        <ul class="nav_ul">
+            <li class="nav_login">TodoList</li>
+            <li class="nav_login"><a href="{{url_for('index')}}" class="nav_login-salir">Salir</a></li>
+        </ul>
+    </nav>
+
+    <form action="" method="post">
+        <label for="username">Useario:</label>
+        <input type="text" name="username" id="username" class="form_input" required>
+        <br>
+        <label for="password">Contrasena:</label>
+        <input type="password" name="password" id="password" class="form_input" required>
+        <br>
+        <button type="submit" value="iniciar Sesion" class="enviar">Iniciar Sesion</button>
+    </form>
+{% endblock %}

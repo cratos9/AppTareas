@@ -1,0 +1,25 @@
+<!-- hereda de un html base-->
+{% extends 'base.html' %}
+
+{% block style %}<link rel="stylesheet" href="{{url_for('static',filename='css/guardar.css')}}">{% endblock %}
+
+<!-- que tendra dentro el bloque con el mismo nombre-->
+{% block title %}Editar tarea{% endblock %}
+
+{% block content %}
+    <section>
+        <h3>Editar tarea</h3>
+        <form action="" method="post">
+            <label for="title">Titulo</label>
+            <input type="text" id="title" name="title" required value="{{todo.title}}">
+            <label for="desc">Descripcion</label>
+            <textarea name="desc" id="desc" rows="3" value="{{todo.desc}}"></textarea>
+            <label for="state">Completado</label>
+            <input type="checkbox" name="state" id="state" {% if todo.state == true %} checked {% endif %}>
+            <br>
+            <input type="submit" value="Guardar" class="guardar">
+            <!-- redirecciona a una pagina con bp-->
+            <a href="{{url_for('todo.index')}}">Cancelar</a>
+        </form>
+    </section>
+{% endblock %}
