@@ -10,7 +10,7 @@
     <nav class="nav">
         <ul class="nav_opciones">
             <li class="nav_opciones-li"><a class="nav_a-opciones" href="">Inicio</a></li>
-            <li class="nav_opciones-li"><a class="nav_a-opciones" href="">Quienes somos</a></li>
+            <li class="nav_opciones-li"><a class="nav_a-opciones" href="{{url_for('auth.presentacion')}}">Quien soy</a></li>
         </ul>
         <p class="titulo">TodoList</p>
         <ul class="nav_usuario">
@@ -31,4 +31,5 @@
         <p>Confia en nosotros, todos tus tareas seran protegidas, inici sesion ya para poder disfrutar completamente GRATIS este maravilloso servicio</p>
         <p class="registrar">Registrate y organiza tus tareas ahora</p>
     </section>
+    <section class="version"><p>V:1.1.0</p></section>
 {% endblock %}

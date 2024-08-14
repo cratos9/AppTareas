@@ -68,6 +68,10 @@ def login():
         flash(error)
     return render_template('auth/login.html')
 
+@bp.route('/presentacion')
+def presentacion():
+    return render_template('auth/presentacion.html')
+
 #con bp crea un decorador para despues de cada peticion
 @bp.before_app_request
 def load_logged_in_user():

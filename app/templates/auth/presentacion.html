@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block style %}<link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">{% endblock %}
+
+{% block title %}
+    presentacion
+{% endblock %}
+
+{% block content %}
+<nav class="nav">
+    <ul class="nav_ul">
+        <li class="nav_login">TodoList</li>
+        <li class="nav_login"><a href="{{url_for('index')}}" class="nav_login-salir">Salir</a></li>
+    </ul>
+</nav>
+
+<section class="section">
+    <h1 class="section__title">Quien soy:</h1>
+    <p class="section__content">Soy un pequeño desarrollador, estudiante y autodidacta, enfocado en la creación de proyectos para mi portafolio. Me apasiona aprender tanto front-end como back-end, y disfruto aplicando mis conocimientos en proyectos prácticos que demuestren mis habilidades y crecimiento en el campo del desarrollo.</p>
+</section>
+{% endblock %}

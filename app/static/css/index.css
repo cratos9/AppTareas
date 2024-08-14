@@ -92,3 +92,8 @@ body{
     text-align: center;
     font-size: 30px;
 }
+
+.version{
+    font-size: 20px;
+    padding: 10px;
+}

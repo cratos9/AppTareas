@@ -68,3 +68,16 @@ label{
     color: white;
     background-color: #009dff;
 }
+
+.section{
+    padding: 20px;
+    text-align: center;
+}
+
+.section__title{
+    font-size: 50px;
+}
+
+.section__content{
+    font-size: 30px;
+}
