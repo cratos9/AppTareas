@@ -13,7 +13,7 @@ def create_app():
     #indica las configuraciones basicas de la app
     app.config.from_mapping(
         #para un debug automatico y no tener que reiniciar el servidor al realiazr un cambio
-        DEBUG = True,
+        DEBUG = False,
         #llave secreta para poder realizar peticiones, debe ser mas secreta, modularizada y protegida pero este es un ejemplo
         SECRET_KEY = 'xd',
         #concecta el controlador de la base de datos con la base de datos
