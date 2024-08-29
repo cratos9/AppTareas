@@ -123,7 +123,7 @@ celerybeat.pid
 
 # Environments
 .env-tareas
-env-tareas/
+.env-tareas/
 .env
 .venv
 env/
