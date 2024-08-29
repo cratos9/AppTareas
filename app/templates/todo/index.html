@@ -25,6 +25,7 @@
                 <th class="campos">Tareas</th>
                 <th class="campos">Estado</th>
                 <th class="campos">Editar</th>
+                <th class="campos">Notificar</th>
                 <th class="campos">Eliminar</th>
             </tr>
         </thead>
@@ -46,6 +47,7 @@
                     {% endif %}
                 </td class="tareas">
                 <td class="tareas"><a href="{{url_for('todo.update', id = todo.id)}}" class="editar" >Editar</a></td>
+                <td class="tareas"><a href="{{ url_for('todo.notificar', id = todo.id) }}" class="notificar">Notificar</a></td>
                 <td class="tareas"><a href="{{url_for('todo.delete', id = todo.id)}}" class="eliminar" >Eliminar</a></td>
             </tr>
         <!-- termina la verificacion-->

@@ -14,9 +14,9 @@ def register():
         #obtiene datos del formulario del render
         username = request.form['username']
         password = request.form['password']
-        
+        email = request.form['email']
         #crea un objeto usuario y cifra la contrasena
-        user = User(username,generate_password_hash(password))
+        user = User(username,generate_password_hash(password),email)
         #crea una variable error en caso que se ocurra uno
         error = None
         #busca las coincidencias del usuario

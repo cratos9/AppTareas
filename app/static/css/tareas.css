@@ -95,3 +95,11 @@ body{
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
+
+.notificar{
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    padding: 5px;
+    border-radius: 5px;
+}

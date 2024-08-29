@@ -74,3 +74,33 @@ a{
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
+
+#notificacion{
+    height: 20px;
+    font-size: 20px;
+    width: 40%;
+    border: 1px solid #009dff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#notificacion:focus{
+    outline: none;
+    background: linear-gradient( to top, #a7d7f5, white);
+}
+
+#correo{
+    height: 20px;
+    font-size: 20px;
+    width: 40%;
+    border: 1px solid #009dff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#correo:focus{
+    outline: none;
+    background: linear-gradient( to top, #a7d7f5, white);
+}
