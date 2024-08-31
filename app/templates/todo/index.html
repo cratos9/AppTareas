@@ -14,8 +14,8 @@
         <!-- muestra el nombre del usuario-->
         <li class="nav_ul-li"><span>{{g.user.username}}</span></li>
         <!-- el url_for redirecciona a otras paginas con bp-->
-        <li class="nav_ul-li"><a href="{{url_for('auth.logout')}}" class="nav_ul-li nav_usuario">Cerrar sesion</a></li>
-        <li class="nav_ul-li"><a href="{{url_for('todo.create')}}" class="nav_ul-li nav_usuario">Nuevo</a></li>
+        <li class="nav_ul-li"><a href="{{url_for('auth.logout')}}" class="nav_ul-li nav_usuario"><span>Cerrar sesion</span></a></li>
+        <li class="nav_ul-li"><a href="{{url_for('todo.create')}}" class="nav_ul-li nav_usuario"><span>Nuevo</span></a></li>
     </ul>
 </nav>
 <section class="section">
@@ -56,6 +56,26 @@
         {% endfor %}
         </tbody>
     </table>
+</section>
+<section class="movil">
+    {% for todo in todos | reverse%}
+        <!-- hace una verificacion que la tarea este echa por el usuario activo-->
+        {% if g.user.id == todo.created_by %}
+                    <h5 class="titulo">{{todo.title}}</h5>
+                    <p>{{todo.desc}}</p>
+                    {% if todo.state == false %}
+                    <span class="tarea-incompleta">Incompleto</span>
+                    {% else %}
+                    <span class="tarea-completa">Completado</span>
+                    {% endif %}
+                    <br>
+                <a href="{{url_for('todo.update', id = todo.id)}}" class="editar" >Editar</a><br>
+                <a href="{{ url_for('todo.notificar', id = todo.id) }}" class="notificar">Notificar</a><br>
+                <a href="{{url_for('todo.delete', id = todo.id)}}" class="eliminar" >Eliminar</a>
+        <!-- termina la verificacion-->
+        {% endif %}
+        <!-- termiona el for -->
+        {% endfor %}
 </section>
 <!-- termina la verificaion -->
 {% endif %}

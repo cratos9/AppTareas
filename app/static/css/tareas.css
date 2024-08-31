@@ -4,9 +4,11 @@ body{
 }
 
 .nav{
+    display: block;
     background-color: #009dff;
     position: relative;
     padding: 10px 0;
+    height: 7dvh;
 }
 
 .nav_ul-li{
@@ -37,6 +39,10 @@ body{
 
 .section{
     margin-top: 20px;
+}
+
+.movil{
+    display: none;
 }
 
 .tabla{
@@ -102,4 +108,45 @@ body{
     background-color: green;
     padding: 5px;
     border-radius: 5px;
+}
+
+@media screen and (max-width:500px){
+    .section{
+        display: none;
+    }
+    .movil{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .titulo{
+        margin-top: 1dvh;
+        margin-bottom: 10px;
+    }
+
+    .nav_ul{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;
+        padding: 0;
+        text-align: center;
+    }
+
+    .nav_ul-li{
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav{
+        height: auto;
+    }
+
+    .nav_usuario{
+        padding: 0;
+    }
 }

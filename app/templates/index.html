@@ -7,16 +7,29 @@
 {%block title %}Inicio{% endblock %}
 
 {% block content %}
-    <nav class="nav">
-        <ul class="nav_opciones">
-            <li class="nav_opciones-li"><a class="nav_a-opciones" href="">Inicio</a></li>
-            <li class="nav_opciones-li"><a class="nav_a-opciones" href="{{url_for('auth.presentacion')}}">Quien soy</a></li>
+    <nav class="nav__PC">
+        <ul>
+            <li class="nav__opciones"><a class="nav__opciones--link" href="">Inicio</a></li>
+            <li class="nav__opciones"><a class="nav__opciones--link" href="{{url_for('auth.presentacion')}}">Quien soy</a></li>
+            
         </ul>
         <p class="titulo">TodoList</p>
-        <ul class="nav_usuario">
-            <!-- el url_for redirecciona a otra pagina con bp con el nombre del bp mas el de la pagina-->
-            <li class="nav_usuario-li"><a href="{{url_for('auth.login')}}" class="nav_a-usuario">Iniciar Sesion</a></li>
-            <li class="nav_usuario-li"><a href="{{url_for('auth.register')}}" class="nav_a-usuario">Registrase</a></li>
+        <ul>
+            <li class="nav__opciones"><a class="nav__opciones--link" href="{{url_for('auth.login')}}">Iniciar Sesion</a></li>
+            <li class="nav__opciones"><a class="nav__opciones--link" href="{{url_for('auth.register')}}">Registrase</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu">
+        <script src="https://kit.fontawesome.com/b51cc67ab1.js" crossorigin="anonymous"></script>
+        <i class="fa-solid fa-bars barras"></i>
+    </div>
+    <nav class="nav__movil">
+        <ul>
+            <li class="movil__opciones"><a class="movil__opciones--link" href="">Inicio</a></li>
+            <li class="movil__opciones"><a class="movil__opciones--link" href="{{url_for('auth.presentacion')}}">Quien soy</a></li>
+            <li class="movil__opciones"><a class="movil__opciones--link" href="{{url_for('auth.login')}}">Iniciar Sesion</a></li>
+            <li class="movil__opciones"><a class="movil__opciones--link" href="{{url_for('auth.register')}}">Registrase</a></li>
         </ul>
     </nav>
 
@@ -31,5 +44,5 @@
         <p>Confia en nosotros, todos tus tareas seran protegidas, inici sesion ya para poder disfrutar completamente GRATIS este maravilloso servicio</p>
         <p class="registrar">Registrate y organiza tus tareas ahora</p>
     </section>
-    <section class="version"><p>V:1.1.0</p></section>
+    <section class="version"><p>V:1.1.1</p></section>
 {% endblock %}
