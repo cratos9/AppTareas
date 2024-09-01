@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, url_for, redirect, flash, session, g
 from .models import User
 from app import db
+from .emails import mailRegister
 from werkzeug.security import generate_password_hash, check_password_hash
 
 #crea el bp 
@@ -23,6 +24,7 @@ def register():
         user_name = User.query.filter_by(username = username).first()
         #si el usuario no existe
         if user_name == None:
+            mailRegister(email,username)
             #crea el usuario y lo redirecciona al login
             db.session.add(user)
             db.session.commit()

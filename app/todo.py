@@ -1,22 +1,7 @@
-from flask import Blueprint, render_template, request, redirect, url_for, g, Flask
+from flask import Blueprint, render_template, request, redirect, url_for, g
 from app.auth import login_required
 from .models import Todo, User
-from flask_mail import Mail, Message
-import threading
-import time
-from datetime import datetime, timedelta
 from app import db
-
-app = Flask(__name__)
-
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'mq583680@gmail.com'
-app.config['MAIL_PASSWORD'] = 'uhch deag gfvl eywy'
-
-mail = Mail(app)
 
 #inicia el blueprint, con su nombre y como se ve en el buscador
 bp = Blueprint('todo',__name__,url_prefix='/todo')
@@ -85,13 +70,6 @@ def delete(id):
     db.session.delete(todo)
     db.session.commit()
     return redirect(url_for('todo.index'))
-
-def correo(todo,correo):
-    with app.app_context():
-        msg = Message(todo.title, recipients=[correo])
-
-def notificacion(todo, fecha, correo):
-    correo(todo, correo)
 
 @bp.route('/notificar/<int:id>', methods=['GET','POST'])
 @login_required
