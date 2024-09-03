@@ -106,15 +106,21 @@ def login_required(view):
         return view(**kwargs)
     return wrapped_view
 
-def get_user(id):
-    user = User.query.get_or_404(id)
-    return user
 
 @bp.route('/actualizar', methods = ['POST','GET'])
 @login_required
-def actuaizar(id):
-    user = get_user(id)
-    
-    #if request.method == 'POST':
-    #user.username = request.form
-    #user.email
+def actualizar():
+    user = g.user
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        error = None
+        user = User.query.get_or_404(user.id)
+        if not check_password_hash(user.password, password):
+            error = 'Contrasena incorrecta'
+        if error == None:
+            user.username = username
+            db.session.commit()
+            return redirect(url_for('todo.index'))
+        flash(error)
+    return render_template('auth/update.html', user = user)

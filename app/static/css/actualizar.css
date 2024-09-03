@@ -1,36 +1,34 @@
 body{
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
-nav{
+
+.nav{
     position: relative;
     background-color: #009dff;
     padding: 10px 0;
 }
 
-.nav_login{
-    display: inline;
-    color: #edfcff;
-    font-size: 30px;
+.nav__opciones{
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.nav_login-salir{
-    color: #edfcff;
+li::marker{
+    content: none;
+}
+
+.nav__opciones--link{
+    color: white;
+    font-size: max(25px,2.3vw);
     text-decoration: none;
-    float: right;
-    transform: translateX(-45%);
-    -webkit-transform: translateX(-45%);
-    -moz-transform: translateX(-45%);
-    -ms-transform: translateX(-45%);
-    -o-transform: translateX(-45%);
+    transition: color .5s;
 }
 
-.nav_login-salir:active{
-    color: #edfcff;
-}
-
-.nav_login-salir:hover{
-    color: #85f4ff;
+.nav__opciones--link:hover{
+    color: #b0daf4;
+    border-bottom: 1px solid #b0daf4;
 }
 
 form{
@@ -43,7 +41,7 @@ label{
     font-size: 20px;
 }
 
-.form_input{
+input{
     display: block;
     height: 20px;
     width: 50%;
@@ -53,7 +51,7 @@ label{
     border-bottom: 2px solid #009dff;
 }
 
-.form_input:focus{
+input:focus{
     outline: none;
     background: linear-gradient( to top, #a7d7f5, white);
 }
@@ -62,24 +60,12 @@ label{
     background-color: white;
     border: 1px solid #009dff;
     padding: 5px;
+
 }
 
 .enviar:hover{
     color: white;
     background-color: #009dff;
-}
-
-.section{
-    padding: 20px;
-    text-align: center;
-}
-
-.section__title{
-    font-size: 50px;
-}
-
-.section__content{
-    font-size: 30px;
 }
 
 .error{
@@ -94,4 +80,11 @@ label{
 
 .error::marker{
     content: '';
+}
+
+section{
+    padding: 20px;
+}
+p{
+    text-align: center;
 }

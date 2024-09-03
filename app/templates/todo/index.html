@@ -12,7 +12,7 @@
 <nav class="nav">
     <ul class="nav_ul">
         <!-- muestra el nombre del usuario-->
-        <li class="nav_ul-li"><span>{{g.user.username}}</span></li>
+        <li class="nav_ul-li"><a href="{{url_for('auth.actualizar')}}" class="nav_ul-li nav_usuario"><span>{{g.user.username}}</span></a></li>
         <!-- el url_for redirecciona a otras paginas con bp-->
         <li class="nav_ul-li"><a href="{{url_for('auth.logout')}}" class="nav_ul-li nav_usuario"><span>Cerrar sesion</span></a></li>
         <li class="nav_ul-li"><a href="{{url_for('todo.create')}}" class="nav_ul-li nav_usuario"><span>Nuevo</span></a></li>

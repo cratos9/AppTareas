@@ -22,4 +22,11 @@
         <br>
         <button type="submit" value="iniciar Sesion" class="enviar">Iniciar Sesion</button>
     </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+                {% for message in messages %}
+                    <p class="error">{{ message }}</p>
+                {% endfor %}
+        {% endif %}
+    {% endwith %}
 {% endblock %}
