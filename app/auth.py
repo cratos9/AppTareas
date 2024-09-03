@@ -105,3 +105,16 @@ def login_required(view):
             return redirect(url_for('auth.login'))
         return view(**kwargs)
     return wrapped_view
+
+def get_user(id):
+    user = User.query.get_or_404(id)
+    return user
+
+@bp.route('/actualizar', methods = ['POST','GET'])
+@login_required
+def actuaizar(id):
+    user = get_user(id)
+    
+    #if request.method == 'POST':
+    #user.username = request.form
+    #user.email
