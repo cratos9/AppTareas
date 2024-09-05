@@ -55,7 +55,7 @@ def create_mail():
         MAIL_USE_TLS = True,
         MAIL_USE_SSL = False,
         MAIL_USERNAME = 'mq583680@gmail.com',
-        MAIL_PASSWORD = 'uhch deag gfvl eywy',
+        MAIL_PASSWORD = '',
         MAIL_DEFAULT_SENDER = 'mq583680@gmail.com'
     )
     
